@@ -129,7 +129,8 @@ def GetAnswers(letter1, letter2, letter3, letter4, letter5, oletters, xletters):
 
     return result
 
-
+if __name__=="__main__":
+    app.run()
 
 
 
