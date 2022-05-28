@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    </br>
+    <h6>Click <a href="https://www.nytimes.com/games/wordle/index.html">Here</a> to play the game.</h6>
+    </br>
+
+    <h5>Correct Letters</h5>
+    <form action="/search" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="input-box" name="letter1" type="text" maxlength=1>
+            <input autocomplete="off" class="input-box" name="letter2" type="text" maxlength=1>
+            <input autocomplete="off" class="input-box" name="letter3" type="text" maxlength=1>
+            <input autocomplete="off" class="input-box" name="letter4" type="text" maxlength=1>
+            <input autocomplete="off" class="input-box" name="letter5" type="text" maxlength=1>
+        </div>
+        <div class="form-group">
+            <input class="form-control" autocomplete="off" name="oletters" placeholder="Good letters" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" autocomplete="off" name="xletters" placeholder="Wrong letters" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    </br>
+
+    <div>
+      {% if answers %}
+        <h5>Possible Answers:</h5>
+      {% endif %}
+
+      {% for answer in answers %}
+        <span>{{ answer }}</span></br>
+      {% endfor %}
+
+    </div>
+
+{% endblock %}
