@@ -46,8 +46,8 @@ def search():
     letter4 = request.form.get("letter4").lower().strip()
     letter5 = request.form.get("letter5").lower().strip()
 
-    oletters = request.form.get("oletters").lower()
-    xletters = request.form.get("xletters").lower()
+    oletters = request.form.get("oletters").lower().strip()
+    xletters = request.form.get("xletters").lower().strip()
 
     if not letter1 and not letter2 and not letter3 and not letter4 and not letter5 and not oletters and not xletters:
         flash('Require at least one input!')
